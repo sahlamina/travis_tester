@@ -2,4 +2,7 @@ language: python
 python:
   - "3.8"
 
-script: mvn test
+before_install:
+  - choco install python3
+  - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+  - python -m pip install --upgrade pip wheel
